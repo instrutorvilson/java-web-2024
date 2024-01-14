@@ -11,5 +11,6 @@
   <h1>Primeira aula de Java Web - Conceitos</h1> 
   <a href="./conceitos.jsp">Conceitos</a>
   <a href="./cadastro.html">Cadastrar</a>
+  <a href="./cadastro2.html">Cadastrar2</a>
 </body>
 </html>
