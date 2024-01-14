@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
     <title>Insert title here</title>
     <link rel="stylesheet" type="text/css" href="./estilos/styles.css" />
-
 </head>
 <body>
     <h1> Cadastros</h1>
