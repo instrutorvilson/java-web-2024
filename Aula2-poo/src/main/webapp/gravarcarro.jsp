@@ -13,9 +13,16 @@
    */
   /* Carro c1 = new Carro(placa, modelo);
    out.write(c1.toString());*/
+  
+   /*Carro c1 = new Carro(placa, modelo);
+     DaoCarro.carros.add(c1);
+     response.sendRedirect("./consulta.jsp");
+   */
+   
    Carro c1 = new Carro(placa, modelo);
-   DaoCarro.carros.add(c1);
-   response.sendRedirect("./consulta.jsp");
+   if(DaoCarro.salvar(c1)){
+	   response.sendRedirect("./consulta.jsp"); 
+   }
    
    
 %>
