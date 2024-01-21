@@ -10,9 +10,15 @@
      input{
         width: 100%
      }
+     div{
+       width: 50%;
+       margin: auto;
+     }
   </style>
 </head>
 <body>
+   <div>
+   
 	<h1>Pagina de cadastro</h1>
 	<nav>
 		<%@include file="./menu.jsp"%>
@@ -32,5 +38,6 @@
 		</form>
 	</main>
 	<footer> Direitos Autorais</footer>
+	</div>
 </body>
 </html>
