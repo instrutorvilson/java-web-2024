@@ -2,8 +2,7 @@
 <%@ page import="classes.Carro" %>
 <%
    String placa = request.getParameter("placa");
-   String modelo = request.getParameter("modelo");
- 
+   String modelo = request.getParameter("modelo"); 
   /* 
    Carro c1 = new Carro();
    c1.placa = placa;
