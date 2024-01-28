@@ -19,6 +19,7 @@
 		</nav>
 		<main class="mt-5">
 		    <h2>Já existe um carro com essa placa: <span style="color:red"> <%= request.getParameter("placa") %></span></h2>
+		    <h3><%= session.getAttribute("modelo") %></h3>
 		</main>
 	</div>
     

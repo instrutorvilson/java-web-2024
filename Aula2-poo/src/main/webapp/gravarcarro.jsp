@@ -23,6 +23,7 @@ else{
 	}
 	
 	if (placaExiste) {
+		session.setAttribute("modelo",modelo);
 		response.sendRedirect("./info.jsp?placa="+placa);
 	}
 	else{
