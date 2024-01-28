@@ -36,7 +36,7 @@ public class DaoCarro {
 			PreparedStatement stm = con.prepareStatement("select * from tb_carros");
 			ResultSet rs = stm.executeQuery();
 			while(rs.next()) {
-				Carro c = new Carro(rs.getString("placa"), rs.getString("modelo"));
+				Carro c = new Carro(rs.getInt("id"), rs.getString("placa"), rs.getString("modelo"));
 				carros.add(c);
 			}
 			
