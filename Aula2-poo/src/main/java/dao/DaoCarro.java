@@ -45,6 +45,8 @@ public class DaoCarro {
 		}
 		return true;
 	}
+	
+	
 
 	public static List<Carro> consultar() {
 		List<Carro> carros = new ArrayList<>();
