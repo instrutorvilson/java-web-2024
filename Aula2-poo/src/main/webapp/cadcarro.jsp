@@ -3,24 +3,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Cadastro de Carro</title>
+   <meta charset="UTF-8">
+   <title>Cadastro de Carro</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+	   rel="stylesheet" 
+	   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+	   crossorigin="anonymous">
 </head>
 <body>
-	<div>
-		<h1>Novo Carro</h1>
-		<nav>
+	<div class="container mt-3">
+		<h1 class="text-center mt-5">Novo Carro</h1>
+		<nav class="mt-5 mb-3">
 			<%@include file="./menu.jsp"%>
 		</nav>
-		<main>
+		<main class="mt-5">
 			<form action="gravarcarro.jsp" method="post">
-				<label>Informe placa do carro</label> 
-				<input type="text" placeholder="Informe placa do carro" name="placa" /> 
+				<label class="form-label">Informe placa do carro</label> 
+				<input class="form-control" type="text" placeholder="Informe placa do carro" name="placa" /> 
 				
-				<label>Informe modelo do carro</label> 
-				<input type="text"	placeholder="Informe modelo do carro" name="modelo" />
+				<label class="form-label">Informe modelo do carro</label> 
+				<input class="form-control" type="text" placeholder="Informe modelo do carro" name="modelo" />
 
-				<button>Gravar</button>
+				<button class="btn btn-outline-primary mt-3">Gravar</button>
 
 			</form>
 		</main>
