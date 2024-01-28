@@ -17,18 +17,37 @@
 			<%@include file="./menu.jsp"%>
 		</nav>
 		<main class="mt-5">
-			<form action="gravarcarro.jsp" method="post">
-				<label class="form-label">Informe placa do carro</label> 
-				<input class="form-control" type="text" placeholder="Informe placa do carro" name="placa" /> 
+			<form action="gravarcarro.jsp" method="post" id="formCadastro">
+				<label for="placa" class="form-label">Informe placa do carro</label> 
+				<input id="placa" class="form-control" type="text" placeholder="Informe placa do carro" name="placa" /> 
 				
-				<label class="form-label">Informe modelo do carro</label> 
-				<input class="form-control" type="text" placeholder="Informe modelo do carro" name="modelo" />
+				<label for="modelo" class="form-label">Informe modelo do carro</label> 
+				<input id="modelo" class="form-control" type="text" placeholder="Informe modelo do carro" name="modelo" />
 
-				<button class="btn btn-outline-primary mt-3">Gravar</button>
+				<!-- <button class="btn btn-outline-primary mt-3">Gravar</button> -->
+				<input onclick="onSubmit()" type="button" class="btn btn-outline-primary mt-3" value="Gravar" />
 
 			</form>
 		</main>
 
 	</div>
+	<script>
+	   function onSubmit(){
+		   let inputPlaca = document.getElementById("placa")
+		   if(inputPlaca.value == ''){
+			   alert("A placa deve ser informada")
+			   inputPlaca.focus()
+			   return
+		   }
+		   
+		   let inputModelo = document.getElementById("modelo")
+		   if(inputModelo.value == ''){
+			   alert("O modelo deve ser informado")
+			   inputModelo.focus()
+			   return
+		   }
+		  document.getElementById("formCadastro").submit()
+	   }
+	</script>
 </body>
 </html>
