@@ -43,7 +43,7 @@
 						out.write("<td>" + carro.getPlaca() + "</td>");
 						out.write("<td>" + carro.getModelo() + "</td>");
 						out.write("<td><a href='./editarcarro.jsp?id="+carro.getId()+"'>Editar</a> &nbsp;&nbsp;");
-						out.write("<a href=''>Excluir</a></td>");
+						out.write("<a href='./excluircarro.jsp?id="+carro.getId()+"'>Excluir</a></td>");
 						out.write("</tr>");
 					}
 					%>
