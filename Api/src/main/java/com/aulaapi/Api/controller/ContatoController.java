@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,13 +32,7 @@ public class ContatoController {
 	@GetMapping("/contatos/{idcontato}")
 	public  ResponseEntity<?> consultarUm(@PathVariable("idcontato")
 	Long idcontato){
-		Contato contato = null;
-		for(Contato ct : contatos) {
-			if(ct.getId() == idcontato) {
-				contato = ct;
-				break;
-			}
-		}
+		Contato contato = existeContato(idcontato);
 		if (contato != null) {
 		   return ResponseEntity.status(HttpStatus.OK).body(contato);
 		}
@@ -55,7 +50,29 @@ public class ContatoController {
 		contatos.add(contato);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contato);
 	}
+	
+	@PutMapping("/contatos/{idContato}")
+	public ResponseEntity<?> alterar(@PathVariable("idContato")	Long idContato, @RequestBody Contato contato){
+    	Contato con = existeContato(idContato);
+		if( con != null) {
+			con.setNome(contato.getNome());
+			con.setEmail(contato.getEmail());
+			return ResponseEntity.status(HttpStatus.OK).body(con);
+		}
+		
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("message: contato não encontrado");
+	}
 
+	private Contato existeContato(Long idContato) {
+		Contato con = null;
+		for(Contato ct : contatos) {
+			if(ct.getId() == idContato) {
+				con = ct;
+				break;
+			}
+		}
+		return con;
+	}
 }
 
 /* Verbos HTTP
