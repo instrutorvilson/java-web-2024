@@ -75,6 +75,7 @@ public class ContatoController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("message: contato não encontrado");
 	}
 
+	
 	private Contato existeContato(Long idContato) {
 		Contato con = null;
 		for(Contato ct : contatos) {
