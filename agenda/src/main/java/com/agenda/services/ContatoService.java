@@ -18,6 +18,15 @@ public class ContatoService {
 	public List<Contato> consultar(){
 		return repository.findAll();
 	}
+	
+	public Contato alterar(Contato contato) {
+		/*objeto monitorado*/
+		Contato ct = consultar(contato.getId());
+		ct.setNome(contato.getNome());
+		ct.setFone(contato.getFone());
+		repository.save(ct);
+		return ct;
+	}
 
 	public Contato inserir(Contato contato) {		
 		return repository.save(contato);
