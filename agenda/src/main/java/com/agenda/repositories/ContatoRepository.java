@@ -7,5 +7,5 @@ import com.agenda.entidades.Contato;
 
 @Repository
 public interface ContatoRepository extends JpaRepository<Contato, Long> {
-    
+   Contato findByEmail(String email);
 }
