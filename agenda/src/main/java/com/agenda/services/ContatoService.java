@@ -16,4 +16,8 @@ public class ContatoService {
 	public List<Contato> consultar(){
 		return repository.findAll();
 	}
+
+	public Contato inserir(Contato contato) {		
+		return repository.save(contato);
+	}
 }
