@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,9 @@ public class Contato {
 	private String nome;
 	private String email;
 	private String fone;
+	
+	@ManyToOne
+	private Endereco endereco;
 
 	public Long getId() {
 		return id;
@@ -48,4 +53,11 @@ public class Contato {
 		this.fone = fone;
 	}
 
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }

@@ -4,16 +4,20 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.RuntimeBeanNameReference;
 import org.springframework.stereotype.Service;
 
 import com.agenda.entidades.Contato;
+import com.agenda.entidades.Endereco;
 import com.agenda.repositories.ContatoRepository;
+import com.agenda.repositories.EnderecoRepository;
 
 @Service
 public class ContatoService {
     @Autowired
 	private ContatoRepository repository;
+    
+    @Autowired
+    private EnderecoRepository enderecoRepository;
 	
 	public List<Contato> consultar(){
 		return repository.findAll();
@@ -28,7 +32,9 @@ public class ContatoService {
 		return ct;
 	}
 
-	public Contato inserir(Contato contato) {		
+	public Contato inserir(Contato contato) {
+		Endereco endereco = enderecoRepository.findById(contato.getEndereco().getId()).get();
+		contato.setEndereco(endereco);
 		return repository.save(contato);
 	}
 
