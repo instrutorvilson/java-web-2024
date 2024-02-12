@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -17,7 +18,9 @@ public class Contato {
 	
 	@Size(min = 5, message = "O campo deve ter no mínimo 5 caracteres.")
 	private String nome;
+	@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "O email não está no formato correto.")
 	private String email;
+	@Pattern(regexp = "^\\(?(\\d{2})\\)?[-.\\s]?([9]{0,1}\\d{4})[-.\\s]?(\\d{4})$", message = "O número de telefone não está no formato correto.")
 	private String fone;
 	
 	@ManyToOne
