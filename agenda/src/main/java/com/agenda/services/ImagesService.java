@@ -33,7 +33,8 @@ public class ImagesService {
 		});
 
 		// Faz a requisição ao Imgur
-		return webClient.post().uri("/3/upload").header(HttpHeaders.CONTENT_TYPE, MediaType.MULTIPART_FORM_DATA_VALUE)
+		return webClient.post().uri("/3/upload")
+				.header(HttpHeaders.CONTENT_TYPE, MediaType.MULTIPART_FORM_DATA_VALUE)
 				.body(BodyInserters
 				.fromMultipartData(parts))
 				.retrieve()

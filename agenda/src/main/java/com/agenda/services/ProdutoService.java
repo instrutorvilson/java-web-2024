@@ -22,7 +22,6 @@ public class ProdutoService {
 
 
 	public Produto inserir(Produto produto) {
-		
 		return repository.save(produto);
 	}
 
